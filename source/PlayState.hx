@@ -1413,7 +1413,12 @@ class PlayState extends MusicBeatState
 		doof.cameras = [camHUD];
 
 
-		gameBlackLayer = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		#if android
+		addAndroidControls();		
+		androidControls.visible = true;	
+		#end	
+				
+				gameBlackLayer = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		gameBlackLayer.scrollFactor.set();
 		add(gameBlackLayer);
 
